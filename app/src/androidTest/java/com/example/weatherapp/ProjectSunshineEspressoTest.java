@@ -55,7 +55,6 @@ public class ProjectSunshineEspressoTest {
 
     @Test
     public void task2() {
-        String city;
         openActionBarOverflowOrOptionsMenu(InstrumentationRegistry.getTargetContext());
         onView(withText(R.string.action_settings)).perform(click());
         onView(withText(R.string.preference_zip_title)).perform(click());
@@ -67,5 +66,13 @@ public class ProjectSunshineEspressoTest {
         openActionBarOverflowOrOptionsMenu(InstrumentationRegistry.getTargetContext());
         onView(withText(R.string.action_settings)).perform(click());
         onView(allOf(withId(android.R.id.summary), hasSibling(withText("Set location")))).check(matches(withText("Chicago")));
+    }
+
+    @Test
+    public void task3() {
+        SystemClock.sleep(500);
+        onView(withId(R.id.refresh_layout)).perform(swipeDown());
+        SystemClock.sleep(1000);
+        onView(withId(R.id.snackbar_text));
     }
 }
