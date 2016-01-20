@@ -41,6 +41,7 @@ public class ProjectSunshineEspressoTest {
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule(MainActivity.class);
 
+    //Espresso Basics
     @Test
     public void task0() {
         SystemClock.sleep(1000);
@@ -73,6 +74,12 @@ public class ProjectSunshineEspressoTest {
         SystemClock.sleep(500);
         onView(withId(R.id.refresh_layout)).perform(swipeDown());
         SystemClock.sleep(1000);
-        onView(withId(R.id.snackbar_text));
+        onView(withId(R.id.snackbar_text)).check(matches(isDisplayed()));
+    }
+
+    //Espresso Intermediate
+    @Test
+    public void task4() {
+
     }
 }
